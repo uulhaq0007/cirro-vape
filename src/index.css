@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-coal font-sans text-[16px] leading-[1.8] text-smoke antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold uppercase text-white;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+  }
+  ::selection {
+    @apply bg-ember text-white;
+  }
+  ::-webkit-scrollbar { width: 9px; }
+  ::-webkit-scrollbar-track { @apply bg-coal-deep; }
+  ::-webkit-scrollbar-thumb { @apply bg-ember; border-radius: 9px; }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5
+           font-display text-[15px] font-semibold uppercase tracking-[1.2px] transition-all duration-300;
+  }
+  .btn-ember {
+    @apply btn bg-ember text-white shadow-ember hover:-translate-y-1 hover:bg-ember-dark;
+  }
+  .btn-ghost {
+    @apply btn border-2 border-ember text-ember hover:-translate-y-1 hover:bg-ember hover:text-white;
+  }
+  .btn-light {
+    @apply btn border-2 border-white/25 text-white hover:-translate-y-1 hover:border-ember hover:bg-ember;
+  }
+
+  .section { @apply py-16 lg:py-[100px]; }
+
+  .eyebrow {
+    @apply mb-3 block font-display text-[15px] font-semibold uppercase tracking-[3px] text-ember;
+  }
+  .sec-title {
+    @apply font-display text-[32px] font-bold uppercase leading-tight text-white sm:text-[40px] lg:text-[46px];
+  }
+  .sec-lead {
+    @apply mx-auto mt-5 max-w-[680px] text-[16px] text-smoke;
+  }
+
+  .card {
+    @apply rounded-xl bg-coal-card p-8 transition-all duration-500;
+  }
+  .card-hover {
+    @apply card hover:-translate-y-2 hover:bg-ember hover:shadow-ember;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-coal-line bg-coal-card px-5 py-3.5 text-[15px] text-white
+           outline-none transition-colors duration-200 placeholder:text-smoke/60 focus:border-ember;
+  }
+  .field-error { @apply border-red-500/70 focus:border-red-500; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible { opacity: 1; transform: none; }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Subtle grain used on the hero, matching the template's textured black */
+  .grain {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 4px 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
