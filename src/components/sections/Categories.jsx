@@ -11,7 +11,7 @@ import SectionPlate from '../ui/SectionPlate'
 export default function Categories() {
   return (
     <section id="categories" className="section relative overflow-hidden bg-coal">
-      <SectionPlate src="/images/Bg-4.jpg" scrim="even" />
+      <SectionPlate src={`${import.meta.env.BASE_URL}images/Bg-4.jpg`} scrim="even" />
       <SmokeBackdrop variant="haze" opacity={0.25} />
       <div className="container relative">
         <div className="text-center">

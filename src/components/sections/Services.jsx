@@ -6,7 +6,7 @@ import SectionPlate from '../ui/SectionPlate'
 export default function Services() {
   return (
     <section className="relative overflow-hidden bg-coal py-14 lg:py-20">
-      <SectionPlate src="/images/Bg-2.jpg" scrim="center" />
+      <SectionPlate src={`${import.meta.env.BASE_URL}images/Bg-2.jpg`} scrim="center" />
       <div className="container relative">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s, i) => {

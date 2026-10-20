@@ -1,3 +1,6 @@
+// Public assets live under the deploy base (e.g. /cirro-vape/ on GitHub Pages).
+const BASE = import.meta.env.BASE_URL
+
 export const shop = {
   name: 'Cirro',
   wordmark: 'CIRRO',
@@ -107,9 +110,9 @@ export const guide = {
 }
 
 export const testimonials = [
-  { quote: 'Ordered a replacement tank on the Thursday and it arrived Friday morning, correctly packed with the spare seals I asked about on the phone.', name: 'Rowan Ellery', role: 'Verified buyer', avatar: '/images/avatar-1.jpg' },
-  { quote: 'They talked me out of the more expensive device because the one I wanted needed coils they could not reliably get. Not many shops would do that.', name: 'Nadia Kaur', role: 'Verified buyer', avatar: '/images/avatar-2.jpg' },
-  { quote: 'Warranty claim handled in four days with no argument. Replacement arrived bench-tested with a note showing the output reading.', name: 'Idris Bello', role: 'Verified buyer', avatar: '/images/avatar-3.jpg' },
+  { quote: 'Ordered a replacement tank on the Thursday and it arrived Friday morning, correctly packed with the spare seals I asked about on the phone.', name: 'Rowan Ellery', role: 'Verified buyer', avatar: `${BASE}images/avatar-1.jpg` },
+  { quote: 'They talked me out of the more expensive device because the one I wanted needed coils they could not reliably get. Not many shops would do that.', name: 'Nadia Kaur', role: 'Verified buyer', avatar: `${BASE}images/avatar-2.jpg` },
+  { quote: 'Warranty claim handled in four days with no argument. Replacement arrived bench-tested with a note showing the output reading.', name: 'Idris Bello', role: 'Verified buyer', avatar: `${BASE}images/avatar-3.jpg` },
 ]
 
 export const posts = [
@@ -120,9 +123,9 @@ export const posts = [
 ]
 
 export const team = [
-  { name: 'Dara Whitlock', role: 'Shop Manager', avatar: '/images/avatar-4.jpg' },
-  { name: 'Malachi Okoro', role: 'Hardware & Repairs', avatar: '/images/avatar-5.jpg' },
-  { name: 'Sabine Holloway', role: 'Orders & Returns', avatar: '/images/avatar-6.jpg' },
+  { name: 'Dara Whitlock', role: 'Shop Manager', avatar: `${BASE}images/avatar-4.jpg` },
+  { name: 'Malachi Okoro', role: 'Hardware & Repairs', avatar: `${BASE}images/avatar-5.jpg` },
+  { name: 'Sabine Holloway', role: 'Orders & Returns', avatar: `${BASE}images/avatar-6.jpg` },
 ]
 
 export const stats = [

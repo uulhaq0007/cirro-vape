@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-coal-deep pb-16 pt-32 lg:pb-24 lg:pt-40">
       {/* Section 1 plate. Delete this to fall back to the generated smoke alone. */}
-      <SectionPlate src="/images/Bg-1.jpg" scrim="none" priority />
+      <SectionPlate src={`${import.meta.env.BASE_URL}images/Bg-1.jpg`} scrim="none" priority />
 
       <div className="container relative">
         <div className="grid items-center gap-12 lg:grid-cols-12">

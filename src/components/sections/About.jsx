@@ -25,7 +25,7 @@ export default function About() {
 
   return (
     <section className="section relative overflow-hidden bg-coal-deep">
-      <SectionPlate src="/images/Bg-3.jpg" scrim="center" />
+      <SectionPlate src={`${import.meta.env.BASE_URL}images/Bg-3.jpg`} scrim="center" />
       <SmokeBackdrop variant="wisp" opacity={0.25} />
       <div className="container relative">
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
